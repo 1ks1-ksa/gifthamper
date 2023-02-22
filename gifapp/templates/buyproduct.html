@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+   <style>
+        *{
+        padding:0;
+        margin:0;
+        font-family:sans-serif;
+        }
+        body{
+        background:#ecf1f4
+        }
+        .registration-form{
+        width:320px;
+        background:#3e3d3d;
+        padding:40px 20px;
+        box-sizing: border-box;
+        position:fixed;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+        }
+<!--        .registration-form h1{-->
+<!--        color:#fff;-->
+<!--        font-size:30px;-->
+<!--        text-align:center;-->
+<!--        margin-bottom:20px;-->
+<!--        }-->
+        .registration-form input{
+        font-size:16px;
+        padding:6px 15px;
+        width:100%;
+        border:1px solid #fff;
+        border-radius:3px;
+        outline: none;
+        box-sizing:border-box;
+        margin-bottom:20px;
+        }
+        .registration-form button{
+        font-size:20px;
+        padding: 10px 15px;
+        border:0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="registration-form">
+
+        <form method="post" enctype="multipart/form-data">{% csrf_token %}
+
+            <img src="{% static im %}" height="200px" width="200px">
+
+             <input type="text" name="pronm" placeholder="product name" value="{{a.proname}}">
+
+            <input type="number" name="propri" placeholder="product price" value="{{a.proprice}}">
+
+            <input type="text" name="prode" placeholder="product description" value="{{a.prodes}}">
+
+            <center><button type="submit">BUY NOW</button></center>
+        </form>
+    </div>
+</body>
+</html>

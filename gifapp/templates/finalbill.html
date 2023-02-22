@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+        padding:0;
+        margin:0;
+        font-family:sans-serif;
+        }
+        body{
+        background:#ecf1f4
+        }
+        .registration-form{
+        width:320px;
+        background:#3e3d3d;
+        padding:40px 20px;
+        box-sizing: border-box;
+        position:fixed;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+        }
+        .registration-form h1{
+        color:#fff;
+        font-size:30px;
+        text-align:center;
+        margin-bottom:20px;
+        }
+        .registration-form input{
+        font-size:16px;
+        padding:6px 15px;
+        width:100%;
+        border:1px solid #fff;
+        border-radius:3px;
+        outline: none;
+        box-sizing:border-box;
+        margin-bottom:20px;
+        }
+        .registration-form button{
+        font-size:20px;
+        padding: 10px 15px;
+        border:0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="registration-form">
+        <form method="post" enctype="multipart/form-data">{% csrf_token %}
+            <input type="text" name="nam" placeholder="NAME">
+            <input type="number" name="phone" placeholder="PHONE NUMBER">
+            <input type="email" name="mail" placeholder="EMAIL">
+            <input type="text" name="add" placeholder="ADDRESS">
+            <input type="number" name="total"  placeholder="TOTAL" value="{{a.tt}}">
+            <center><button type="submit">PLACE OREDER</button></center>
+        </form>
+</div>
+</body>
+</html>

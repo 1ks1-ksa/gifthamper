@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <style>
+        *{
+        padding:0;
+        margin:0;
+        font-family:sans-serif;
+        }
+        body{
+        background:white
+        }
+        .registration-form{
+        width:320px;
+        background:#3e3d3d;
+        padding:40px 20px;
+        box-sizing: border-box;
+        position:fixed;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+        }
+        .registration-form h1{
+        color:#fff;
+        font-size:30px;
+        text-align:center;
+        margin-bottom:20px;
+        }
+        .registration-form input{
+        font-size:16px;
+        padding:6px 15px;
+        width:100%;
+        border:1px solid #fff;
+        border-radius:3px;
+        outline: none;
+        box-sizing:border-box;
+        margin-bottom:20px;
+        }
+        .registration-form button{
+        font-size:20px;
+        padding: 10px 15px;
+        border:0;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if messages %}
+    {% for message in messages%}
+    <div class="alert alert-dark">
+        {{ message }}
+    </div>
+    {% endfor%}
+{% endif %}
+
+
+<div class="registration-form">
+        <h1>USER LOGIN</h1>
+        <form method="post">{% csrf_token %}
+
+            <input type="text" name="username" placeholder="USER NAME">
+
+
+            <input type="password" name="password" placeholder="PASSWORD">
+
+
+            <center><button type="submit">LOGIN</button></center>
+        </form>
+    </div>
+
+</body>
+</html>
